@@ -15,6 +15,7 @@ def swap(arr, i, j):
     arr[j] = aux
 
 
+# algoritmo más eficiente que el bubble sort
 def sort_algorithm(list):
 
     n = len(list)
@@ -29,7 +30,7 @@ def sort_algorithm(list):
                 tmp = j
 
         swap(list, tmp, i)
-        print(list)
+        # print(list)
 
     print(list)
     return list
