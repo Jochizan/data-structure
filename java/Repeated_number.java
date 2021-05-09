@@ -7,7 +7,7 @@
  */
 import java.util.*;
 
-public class num_repite extends java.lang.Exception {
+public class Repeated_number extends java.lang.Exception {
         
 	public static void main(String args[]) {
 		int[] arr = {1, 10, 100, 20, 30, 10, 50, 1, 20, 30, 40, 50};

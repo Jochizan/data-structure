@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import java.util.function.BiFunction;
 
 public class Area {
 
@@ -13,6 +14,8 @@ public class Area {
     System.out.print("Ingrese la altura: ");
     height = in.nextInt();
 
-    System.out.println("El area es: " + (base * height));
+    // System.out.println("El area es: " + (base * height));
+    BiFunction<Integer, Integer, Integer> multiply = (x, y) -> x * y;
+    System.out.println("El area es: " + multiply.apply(base, height));
   }
 }
