@@ -3,7 +3,7 @@
  * @(#)keep_tidy.java
  *
  *
- * @author 
+ * @author Joan Roca Hormaza
  * @version 1.00 2021/5/4
  */
 
@@ -27,18 +27,18 @@ public class Keep_tidy {
     arr.add(90);
     arr.add(100);
     arr.add(120);
-    // Collections.sort(arr);
+    // Collections.sort(arr); -> solo si el arreglo esta desordenado
 
-    // System.out.print(runBinarySearchRecursively(arr, 121, 0, 10));
     System.out.println(arr.toString());
     System.out.print("Ingrese un valor: ");
 
     while (in.hasNext()) {
       temporal = in.nextInt();
 
-      ArrayList<Integer> response = runBinarySearchRecursively(arr, temporal, 0, arr.size());
+      ArrayList<Integer> ans = new ArrayList<Integer>();
+      ArrayList<Integer> response = runBinarySearchRecursively(arr, ans, temporal, 0, arr.size());
 
-      System.out.println(response.toString());
+      System.out.println("índices: " + response.toString());
       if (response.get(0) == -1) {
         if (response.get(0) >= arr.size()) {
           arr.add(temporal);
@@ -54,11 +54,11 @@ public class Keep_tidy {
     }
   }
 
-  static ArrayList<Integer> runBinarySearchRecursively(ArrayList<Integer> sortedArray, int key, int low, int high) {
+  static ArrayList<Integer> runBinarySearchRecursively(ArrayList<Integer> sortedArray, ArrayList<Integer> answer,
+      int key, int low, int high) {
     int middle = (low + high) / 2;
 
     if (high < low) {
-      ArrayList<Integer> answer = new ArrayList<Integer>();
       answer.add(-1);
       answer.add(high);
       answer.add(low);
@@ -67,16 +67,14 @@ public class Keep_tidy {
 
     if (middle < sortedArray.size()) {
       if (key == sortedArray.get(middle)) {
-        ArrayList<Integer> answer = new ArrayList<Integer>();
         answer.add(middle);
         return answer;
       } else if (key < sortedArray.get(middle)) {
-        return runBinarySearchRecursively(sortedArray, key, low, middle - 1);
+        return runBinarySearchRecursively(sortedArray, answer, key, low, middle - 1);
       } else {
-        return runBinarySearchRecursively(sortedArray, key, middle + 1, high);
+        return runBinarySearchRecursively(sortedArray, answer, key, middle + 1, high);
       }
     } else {
-      ArrayList<Integer> answer = new ArrayList<Integer>();
       answer.add(middle);
       return answer;
     }
