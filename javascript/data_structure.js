@@ -1,4 +1,4 @@
-const messyList = [13, 1, 2, 3, 11, 20, 9, 1, -10, 14];
+const messyList = [13, 1, 2, 3, 11, 20, 9, 10, 1, -10, 14];
 
 const swap = (arr, i, j) => {
   let aux = arr[i];
