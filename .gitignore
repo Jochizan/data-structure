@@ -1,5 +1,6 @@
 *.exe
 *.class
 *.iml
+mysql-connector-java-8.0.21.jar
 .idea
 out

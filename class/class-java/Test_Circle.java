@@ -33,5 +33,4 @@ public class Test_Circle {
         }
         System.out.println("La cantidad de circulos creados es: " + Circle.numCircles);
     }
-
 }
