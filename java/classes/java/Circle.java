@@ -1,6 +1,8 @@
+package classes.java;
+
 public class Circle {
     public double x, y, r;
-    static int numCircles = 0;
+    public static int numCircles = 0;
 
     public Circle(double x, double y, double r) {
         this.x = x;

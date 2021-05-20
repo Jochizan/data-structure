@@ -1,8 +1,10 @@
+package classes.java;
+
 public class Rectangle {
-  int x;
-  int y;
-  int width;
-  int height;
+  public int x;
+  public int y;
+  public int width;
+  public int height;
 
   public Rectangle() {
     x = 0;
@@ -27,12 +29,12 @@ public class Rectangle {
     return width * height;
   }
 
-  void displace(int dx, int dy) {
+  public void displace(int dx, int dy) {
     x += dx;
     y += dy;
   }
 
-  boolean indoors(int x1, int y1) {
+  public boolean indoors(int x1, int y1) {
     if ((x1 > x && x1 < x + width) && (y1 > y && y1 < y + width)) {
       return true;
     }

@@ -1,4 +1,6 @@
-public class Test_Quebrado {
+import classes.java.Quebrado;
+
+public class QuebradoApp {
     public static void main(String[] args) {
         Quebrado quebrado = new Quebrado();
         Quebrado quebrado1 = new Quebrado();

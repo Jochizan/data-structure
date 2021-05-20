@@ -9,7 +9,7 @@
 
 import java.util.*;
 
-public class Keep_tidy {
+public class KeepTidy {
 
   static Scanner in = new Scanner(System.in);
 

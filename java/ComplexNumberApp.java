@@ -1,6 +1,8 @@
+import classes.java.ComplexNumber;
+
 import java.util.Scanner;
 
-public class Test_ComplexNumber {
+public class ComplexNumberApp {
 
     static Scanner in = new Scanner(System.in);
     public static void main(String[] args) {

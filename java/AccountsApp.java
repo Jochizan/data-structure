@@ -1,6 +1,8 @@
+import classes.java.Account;
+
 import java.util.Scanner;
 
-public class Test_Accounts {
+public class AccountsApp {
 
     static Scanner in = new Scanner(System.in);
 

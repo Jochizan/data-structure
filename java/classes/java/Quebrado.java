@@ -1,10 +1,12 @@
+package classes.java;
+
 import java.io.*;
 
 public class Quebrado {
     int numerador;
     int denominador;
 
-    void read() {
+    public void read() {
         try {
             // Definir un flujo de caracteres de entrada
             InputStreamReader isr = new InputStreamReader(System.in);
@@ -24,7 +26,7 @@ public class Quebrado {
         } catch (IOException ignore) {}
     }
 
-    void toWrite() {
+    public void toWrite() {
         System.out.print("El quebrado es: ");
         if (denominador != 1)
             System.out.print(numerador + "/" + denominador + "\n");
@@ -32,7 +34,7 @@ public class Quebrado {
             System.out.print(numerador + "\n");
     }
 
-    Quebrado sum(Quebrado r1, Quebrado r2) {
+    public Quebrado sum(Quebrado r1, Quebrado r2) {
         Quebrado quebrado = new Quebrado();
 
         quebrado.numerador = r1.numerador * r2.denominador + r1.denominador * r2.numerador;
@@ -40,7 +42,7 @@ public class Quebrado {
         return quebrado;
     }
 
-    Quebrado simplify(Quebrado r) {
+    public Quebrado simplify(Quebrado r) {
         int i = 2;
         while (i <= r.numerador && i <= r.denominador) {
             while (r.numerador % i == 0 && r.denominador % i == 0) {

@@ -1,6 +1,11 @@
+# Binaries
 *.exe
 *.class
+
+# Configuration
 *.iml
-mysql-connector-java-8.0.21.jar
 .idea
+
+# Jar and compilations of java
+mysql-connector-java-8.0.21.jar
 out

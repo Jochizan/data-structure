@@ -1,7 +1,7 @@
 import java.util.Scanner;
 import java.util.function.BiFunction;
 
-public class Area {
+public class Surface {
 
   static Scanner in = new Scanner(System.in);
 

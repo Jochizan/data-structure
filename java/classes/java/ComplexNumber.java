@@ -1,29 +1,31 @@
+package classes.java;
+
 import java.lang.Math;
 
 public class ComplexNumber {
     float real;
     float imaginary;
 
-    ComplexNumber() {
+    public ComplexNumber() {
         real = 0;
         imaginary = 0;
     }
 
-    ComplexNumber(float real, float imaginary) {
+    public ComplexNumber(float real, float imaginary) {
         this.real = real;
         this.imaginary = imaginary;
     }
 
-    void toAssign(float real, float imaginary) {
+    public void toAssign(float real, float imaginary) {
         this.real = real;
         this.imaginary = imaginary;
     }
 
-    void toWrite() {
+    public void toWrite() {
         System.out.println("EL complejo es: " + real + " + imaginario " + imaginary);
     }
 
-    float absolute(ComplexNumber complexNumber) {
+    public float absolute(ComplexNumber complexNumber) {
         float value;
         value = complexNumber.real * complexNumber.real + complexNumber.imaginary * complexNumber.imaginary;
         value = (float) Math.sqrt(value);

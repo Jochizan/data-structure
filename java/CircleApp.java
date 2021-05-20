@@ -1,6 +1,8 @@
+import classes.java.Circle;
+
 import java.util.Scanner;
 
-public class Test_Circle {
+public class CircleApp {
 
     static Scanner in = new Scanner(System.in);
 
