@@ -1,4 +1,4 @@
-package classes.java;
+package com.imaginary;
 
 public class Point {
     private int x, y, z;

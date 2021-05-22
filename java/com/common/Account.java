@@ -1,4 +1,4 @@
-package classes.java;
+package com.common;
 
 public class Account {
     private float balance;

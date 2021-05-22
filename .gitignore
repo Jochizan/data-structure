@@ -7,5 +7,5 @@
 .idea
 
 # Jar and compilations of java
-mysql-connector-java-8.0.21.jar
+libs
 out

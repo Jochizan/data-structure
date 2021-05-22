@@ -1,4 +1,4 @@
-import classes.java.Point;
+import com.imaginary.Point;
 
 public class PointApp {
 

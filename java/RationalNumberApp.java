@@ -1,5 +1,5 @@
 // Clase con atributos
-import classes.java.Rational;
+import com.imaginary.Rational;
 
 // Clase con Arrays
 //import classes.java.RationalNumber;

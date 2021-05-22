@@ -1,4 +1,4 @@
-package classes.java;
+package com.imaginary;
 
 import java.util.Scanner;
 

@@ -1,5 +1,5 @@
-import classes.java.SinglyLinkedList;
-import classes.java.SinglyLinkedListNode;
+import com.tda.SinglyLinkedList;
+import com.tda.SinglyLinkedListNode;
 
 import java.util.Scanner;
 import java.io.*;

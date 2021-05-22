@@ -1,4 +1,4 @@
-import classes.java.Quebrado;
+import com.imaginary.Quebrado;
 
 public class QuebradoApp {
     public static void main(String[] args) {

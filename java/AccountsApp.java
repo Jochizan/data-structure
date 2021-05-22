@@ -1,4 +1,4 @@
-import classes.java.Account;
+import com.common.Account;
 
 import java.util.Scanner;
 

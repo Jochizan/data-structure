@@ -1,4 +1,4 @@
-import classes.java.ComplexNumber;
+import com.imaginary.ComplexNumber;
 
 import java.util.Scanner;
 

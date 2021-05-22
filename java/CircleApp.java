@@ -1,4 +1,4 @@
-import classes.java.Circle;
+import com.common.Circle;
 
 import java.util.Scanner;
 

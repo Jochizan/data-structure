@@ -1,4 +1,4 @@
-package classes.java;
+package com.tda;
 
 public class SinglyLinkedListNode {
 

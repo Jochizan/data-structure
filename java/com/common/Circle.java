@@ -1,4 +1,4 @@
-package classes.java;
+package com.common;
 
 public class Circle {
     public double x, y, r;

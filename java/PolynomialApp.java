@@ -1,4 +1,4 @@
-import classes.java.Polynomial;
+import com.imaginary.Polynomial;
 
 import java.util.Scanner;
 

@@ -1,9 +1,17 @@
-import classes.java.NumbersBase;
+import com.consolidate.first.NumbersBase;
+
+import java.util.Scanner;
 
 public class NumbersBaseApp {
+
+    private static Scanner in = new Scanner(System.in);
+
     public static void main(String[] args) {
-        NumbersBase numbersBase = new NumbersBase(11, 2);
+        NumbersBase numbersBase = new NumbersBase("1111101", 2);
+        numbersBase.toWrite();
         numbersBase.transformTo10();
-        numbersBase.transformToAny();
+        numbersBase.toWrite();
+        numbersBase.transformOf10ToAny(16);
+        numbersBase.toWrite();
     }
 }

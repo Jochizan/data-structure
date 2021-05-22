@@ -1,4 +1,4 @@
-import classes.java.Rectangle;
+import com.common.Rectangle;
 
 public class RectangleApp {
   public static void main(String[] args) {
