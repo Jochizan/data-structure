@@ -11,8 +11,9 @@ public class TicTacToe {
     public static final String ANSI_BLUE = "\u001B[34m";
     public static final String ANSI_RED = "\u001B[31m";
     public static final String RESET = "\033[0m";
-    private static Character playerOne = 'X';
-    private static Character playerTwo = 'O';
+    private static final Character playerOne = 'X';
+    private static final Character playerTwo = 'O';
+
     private static Character turn;
     private static Boolean inGame;
     private static Boolean inGameTicTacToe;
@@ -26,7 +27,7 @@ public class TicTacToe {
 
     public static void initialGame(Scanner in) {
 
-        int width, count = 0;
+        int width, count = 1;
         System.out.print("Inserte el ancho del tablero: ");
         width = in.nextInt();
         TicTacToe ticTacToe = new TicTacToe(width);
@@ -52,8 +53,8 @@ public class TicTacToe {
                     } else {
                         ticTacToe.board.get(indices.get(0)).set(indices.get(1), turn);
                         turn = playerOne;
-                        count++;
                     }
+                    count++;
                 } else {
                     System.out.print("No existe esa columna vuelva a intentarlo..."
                             + (turn == playerOne ? " jugador 1" : "jugador 2"));
@@ -65,7 +66,7 @@ public class TicTacToe {
                 continue;
             }
             ticTacToe.toWrite();
-            if (count >= ticTacToe.nxN) {
+            if (count >= ticTacToe.nxN * 2) {
                 Character winner = verifyWinner(ticTacToe.board);
                 if (winner != ' ') {
                     if (winner == playerOne) {
@@ -74,6 +75,9 @@ public class TicTacToe {
                     if (winner == playerTwo) {
                         System.out.println("\nA ganado el juego el jugador 2");
                     }
+                    break;
+                } else if (count == ticTacToe.nxN * ticTacToe.nxN + 1) {
+                    System.out.println("\nHubo un empate");
                     break;
                 }
             }
@@ -84,16 +88,18 @@ public class TicTacToe {
 
         int n = board.size(), d_one = 0, d_two = 0, d_three = 0, d_four = 0;
         for (int i = 0; i < n; ++i) {
-            int one, two, three = 0, four = 0;
-            one = (int) board.get(i).stream().filter((item) -> (item == playerOne)).count();
-            two = (int) board.get(i).stream().filter((item) -> (item == playerTwo)).count();
+            int one = 0, two = 0, three = 0, four = 0;
+//            one = (int) board.get(i).stream().filter((item) -> (item == playerOne)).count();
+//            two = (int) board.get(i).stream().filter((item) -> (item == playerTwo)).count();
 
             for (int j = 0; j < n; ++j) {
+                one += ((board.get(i)).get(j) == playerOne) ? 1 : 0;
+                two += ((board.get(i)).get(j) == playerOne) ? 1 : 0;
                 three += ((board.get(j)).get(i) == playerOne) ? 1 : 0;
                 four += ((board.get(j)).get(i) == playerTwo) ? 1 : 0;
-                if (three > 0 && four > 0) {
-                    break;
-                }
+//                if (three > 0 && four > 0) {
+//                    break;
+//                }
             }
 
             if (((board.get(i)).get(i) == playerOne)) {

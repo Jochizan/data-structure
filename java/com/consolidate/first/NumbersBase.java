@@ -9,6 +9,16 @@ public class NumbersBase {
         this.base = base;
     }
 
+    public String convertToNormal(String number) {
+        char[] lt = number.toCharArray();
+        String answer = "";
+        for (int i = 0; i < lt.length; i++) {
+            String add = "(" + (Character.toUpperCase(lt[i]) - '6') + ")";
+            answer += lt[i] >= 'a' ? add : lt[i];
+        }
+        return answer;
+    }
+
     public void toWrite() {
         System.out.println("El número es: " + number + " en la base " + base);
     }
@@ -23,19 +33,12 @@ public class NumbersBase {
 
     public void transformOf10ToAny(int base) {
         this.number = Integer.toString(Integer.parseInt(this.number), base);
+        this.number = convertToNormal(this.number);
         setBase(base);
     }
 
     public String getNumber() {
         return number;
-    }
-
-    public void setNumber(String number) {
-        this.number = number;
-    }
-
-    public int getBase() {
-        return base;
     }
 
     public void setBase(int base) {
