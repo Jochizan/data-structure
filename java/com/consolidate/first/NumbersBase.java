@@ -13,7 +13,7 @@ public class NumbersBase {
         char[] lt = number.toCharArray();
         String answer = "";
         for (int i = 0; i < lt.length; i++) {
-            String add = "(" + (Character.toUpperCase(lt[i]) - '6') + ")";
+            String add = "(" + (Character.toUpperCase(lt[i]) - '7') + ")";
             answer += lt[i] >= 'a' ? add : lt[i];
         }
         return answer;
@@ -31,14 +31,12 @@ public class NumbersBase {
         setBase(10);
     }
 
+    // '1' '2' .... '9' 'a' 'b' 'c' 'f'
+
     public void transformOf10ToAny(int base) {
         this.number = Integer.toString(Integer.parseInt(this.number), base);
         this.number = convertToNormal(this.number);
         setBase(base);
-    }
-
-    public String getNumber() {
-        return number;
     }
 
     public void setBase(int base) {
