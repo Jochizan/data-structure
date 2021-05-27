@@ -6,29 +6,33 @@ import java.util.Set;
 
 public class Sets {
     private Set<String> set = new HashSet<>();
+    //    a -> [2, 3, 4, 100, 101] a.contains("1") -> false
+    //    b -> [1, 2, 3, 4, 100, 102, 103]
 
-    public Sets() {
-    }
+    //    c -> [1, 2, 3, 4, 100, 101, 102, 103]
+    //    d -> [2, 3, 4, 100, 101]
+
+    public Sets() {}
 
     public static Set<String> union(Set<String> a, Set<String> b) {
         return mergeSet(a, b);
     }
 
     private static <T> Set<T> mergeSet(Set<T> a, Set<T> b) {
-        return new HashSet<T>() {{
+        return new HashSet<>() {{
             addAll(a);
             addAll(b);
         }};
     }
 
     public static Set<String> intersection(Set<String> a, Set<String> b) {
-        return intesectionSet(a, b);
+        return intersectionSet(a, b);
     }
 
-    private static <T> Set<T> intesectionSet(Set<T> a, Set<T> b) {
-        return new HashSet<T>() {{
-            b.forEach((item) -> {
-                if (a.contains(item)) {
+    private static <T> Set<T> intersectionSet(Set<T> a, Set<T> b) {
+        return new HashSet<>() {{
+            a.forEach((item) -> {
+                if (b.contains(item)) {
                     add(item);
                 }
             });
