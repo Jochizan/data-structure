@@ -83,8 +83,60 @@ public class SinglyLinkedList {
             tmp.next = tmpTwo.next;
     }
 
+
+    public void replace(String nameTmp, String replaceTmp) {
+        Node tmpTwo = head;
+
+        while (!tmpTwo.value.equals(replaceTmp))
+            tmpTwo = tmpTwo.next;
+
+        tmpTwo.value = nameTmp;
+    }
+
+    public void replaceAll(String nameTmp, String replaceTmp) {
+        Node tmpTwo = head;
+
+        while (tmpTwo.next != null) {
+            if (tmpTwo.value.equals(replaceTmp)) {
+                tmpTwo.value = nameTmp;
+            }
+            tmpTwo = tmpTwo.next;
+        }
+
+        if (tmpTwo.value.equals(replaceTmp)) {
+            tmpTwo.value = nameTmp;
+        }
+    }
+
+    public Node find(String nameTmp) {
+        Node tmpTwo = head;
+        int count = 0;
+
+        while (!tmpTwo.value.equals(nameTmp)) {
+            tmpTwo = tmpTwo.next;
+            count++;
+        }
+
+        tmpTwo.index = count + 1;
+
+        return tmpTwo;
+    }
+
+    public long size() {
+        int count = 0;
+        Node tmpTwo = head;
+
+        while (tmpTwo.next != null) {
+            tmpTwo = tmpTwo.next;
+            count++;
+        }
+
+        return count + 1;
+    }
+
     public void show() {
         Node p;
+        System.out.print("\n\tEL arreglo tiene un tamaño de: " + this.size());
         System.out.print("\n\tEl contenido de la lista es el siguiente: \n\t");
         p = head;
 

@@ -1,8 +1,9 @@
+import com.tda.Node;
 import com.tda.SinglyLinkedList;
-import com.tda.SinglyLinkedListNode;
+//import com.tda.SinglyLinkedListNode;
 
 import java.util.Scanner;
-import java.io.*;
+//import java.io.*;
 
 //public class SinglyLinkedListApp {
 //
@@ -62,8 +63,10 @@ public class SinglyLinkedListApp {
                     "\n3). Insertar el primer nodo de la lista" +
                     "\n4). Insertar nodo en la primera posición" +
                     "\n5). Insertar nodo después del último nodo" +
-                    "\n6). Insertar node entre dos nodos" +
-                    "\n7). Mostrar lista..." +
+                    "\n6). Insertar nodo entre dos nodos" +
+                    "\n7). Buscar un nodo en la lista" +
+                    "\n8). Reemplazar valores de la lista" +
+//                    "\n9). Mostrar lista..." +
                     "\nOpcion ==> ");
             option = in.nextInt();
 
@@ -102,11 +105,30 @@ public class SinglyLinkedListApp {
                     singlyLinkedList.insert(name, beforeName);
                     break;
                 case 7:
-                    singlyLinkedList.show();
-                    break;
+                    System.out.print("Ingrese el valor que quiere buscar ==> ");
+                    name = in.next();
+                    Node search = singlyLinkedList.find(name);
+                    System.out.println("El valor es: " + search.value + " esta en la posición: " + search.index);
+                case 8:
+                    System.out.print("Ingrese el valor para el remplazo: ");
+                    name = in.next();
+                    System.out.print("Ingrese el valor que quiere remplazar: ");
+                    beforeName = in.next();
+                    System.out.print("\nOpciones: " +
+                            "\n1). Remplazar la primera busqueda: " +
+                            "\n2). Remplazar todas las busquedas: " +
+                            "\nIngrese su opción: "
+                    );
+                    option = in.nextInt();
+                    if (option == 1) {
+                        singlyLinkedList.replace(name, beforeName);
+                    } else {
+                        singlyLinkedList.replaceAll(name, beforeName);
+                    }
                 default:
                     System.out.println("Opción no contemplada");
             }
+            singlyLinkedList.show();
         } while (true);
     }
 }

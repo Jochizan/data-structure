@@ -1,8 +1,9 @@
 package com.tda;
 
 public class Node {
-    Object value;
-    Node next;
+    public Object value;
+    public Node next;
+    public int index = 0;
 
 //    public Node (Object value) {
 //        this.value = value;
