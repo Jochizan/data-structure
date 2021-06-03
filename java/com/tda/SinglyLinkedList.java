@@ -26,6 +26,11 @@ public class SinglyLinkedList {
     }
 
     public void push(String nameTmp) {
+        if (head == null) {
+            shift(nameTmp);
+            return;
+        }
+
         Node tmp = new Node();
         tmp.value = nameTmp;
         tmp.next = null;
@@ -48,6 +53,7 @@ public class SinglyLinkedList {
 
         while (!tmpTwo.value.equals(beforeNameTmp)) {
             tmpTwo = tmpTwo.next;
+            assert tmpTwo != null;
             if (tmpTwo.next == null && !tmpTwo.value.equals(beforeNameTmp)) {
                 System.out.println("Error el valor " + beforeNameTmp + " no existe en la lista");
                 return;
@@ -113,6 +119,9 @@ public class SinglyLinkedList {
         int count = 0;
 
         while (!tmpTwo.value.equals(nameTmp)) {
+            if (tmpTwo.next == null)
+                return null;
+
             tmpTwo = tmpTwo.next;
             count++;
         }
@@ -136,7 +145,7 @@ public class SinglyLinkedList {
 
     public void show() {
         Node p;
-        System.out.print("\n\tEL arreglo tiene un tamaño de: " + this.size());
+        System.out.print("\n\tEL arreglo tiene un tamaño de: " + size());
         System.out.print("\n\tEl contenido de la lista es el siguiente: \n\t");
         p = head;
 

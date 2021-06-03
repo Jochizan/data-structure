@@ -57,12 +57,12 @@ public class TicTacToe {
                     count++;
                 } else {
                     System.out.print("No existe esa columna vuelva a intentarlo..."
-                            + (turn == playerOne ? " jugador 1" : "jugador 2"));
+                                     + (turn == playerOne ? " jugador 1" : "jugador 2"));
                     continue;
                 }
             } else {
                 System.out.print("No existe esa fila vuelva a intentarlo..."
-                        + (turn == playerOne ? " jugador 1" : "jugador 2"));
+                                 + (turn == playerOne ? " jugador 1" : "jugador 2"));
                 continue;
             }
             ticTacToe.toWrite();
@@ -196,7 +196,7 @@ public class TicTacToe {
                             ? ANSI_RED
                             : ANSI_BLUE
                     , item == ' ' ? '-' : item, RESET));
-            System.out.printf("\n");
+            System.out.print("\n");
         });
         System.out.printf("%s", finalLine);
     }

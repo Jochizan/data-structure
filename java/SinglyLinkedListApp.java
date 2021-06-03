@@ -108,7 +108,12 @@ public class SinglyLinkedListApp {
                     System.out.print("Ingrese el valor que quiere buscar ==> ");
                     name = in.next();
                     Node search = singlyLinkedList.find(name);
-                    System.out.println("El valor es: " + search.value + " esta en la posición: " + search.index);
+                    if (search != null) {
+                        System.out.println("El valor  " + search.value + " esta en la posición: " + search.index + " de la lista");
+                    } else {
+                        System.out.println("El valor " + name + " no existe en la lista");
+                    }
+                    break;
                 case 8:
                     System.out.print("Ingrese el valor para el remplazo: ");
                     name = in.next();
@@ -125,6 +130,7 @@ public class SinglyLinkedListApp {
                     } else {
                         singlyLinkedList.replaceAll(name, beforeName);
                     }
+                    break;
                 default:
                     System.out.println("Opción no contemplada");
             }
