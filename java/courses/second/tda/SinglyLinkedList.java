@@ -126,6 +126,27 @@ public class SinglyLinkedList {
         }
     }
 
+    public void insertBefore(String D, String E) {
+        SinglyLinkedListNode node = head;
+
+        while (node != null) {
+            if (node.next != null) {
+                if (node.next.value.equals(D)) {
+                    SinglyLinkedListNode nodeTmp = node.next;
+                    SinglyLinkedListNode tmp = new SinglyLinkedListNode(E);
+                    node.next = tmp;
+                    tmp.next = nodeTmp;
+                    break;
+                }
+            } else {
+                node.next = new SinglyLinkedListNode(E);
+                break;
+            }
+
+            node = node.next;
+        }
+    }
+
     public SinglyLinkedListNode find(String nameTmp) {
         SinglyLinkedListNode tmpTwo = head;
         int count = 0;
@@ -146,7 +167,7 @@ public class SinglyLinkedList {
     public long size() {
         int count = 0;
 
-        if(head == null) {
+        if (head == null) {
             return 0;
         }
 

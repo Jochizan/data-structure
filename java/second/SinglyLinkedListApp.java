@@ -1,6 +1,7 @@
 package second;//import com.tda.Node;
 
-import courses.second.tda.*;
+import courses.second.tda.SinglyLinkedList;
+import courses.second.tda.SinglyLinkedListNode;
 
 import java.util.Scanner;
 
@@ -25,7 +26,8 @@ public class SinglyLinkedListApp {
                     "\n6). Insertar nodo entre dos nodos" +
                     "\n7). Buscar un nodo en la lista" +
                     "\n8). Reemplazar valores de la lista" +
-//                    "\n9). Mostrar lista..." +
+                    // Esta opción es de la 2 de la práctica
+                    "\n9). Ingresar un valor antes de otro" +
                     "\nOpcion ==> ");
             option = in.nextInt();
 
@@ -101,6 +103,13 @@ public class SinglyLinkedListApp {
                     } else {
                         singlyLinkedList.replaceAll(name, beforeName);
                     }
+                    break;
+                case 9:
+                    System.out.print("Ingrese el valor D: ");
+                    beforeName = in.next();
+                    System.out.print("Ingrese el valor E: ");
+                    name = in.next();
+                    singlyLinkedList.insertBefore(beforeName, name);
                     break;
                 default:
                     System.out.println("Opción no contemplada");
