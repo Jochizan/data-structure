@@ -19,7 +19,7 @@ public class Sets {
     }
 
     private static <T> Set<T> mergeSet(Set<T> a, Set<T> b) {
-        return new HashSet<>() {{
+        return new HashSet<T>() {{
             addAll(a);
             addAll(b);
         }};
@@ -30,7 +30,7 @@ public class Sets {
     }
 
     private static <T> Set<T> intersectionSet(Set<T> a, Set<T> b) {
-        return new HashSet<>() {{
+        return new HashSet<T>() {{
             a.forEach((item) -> {
                 if (b.contains(item)) {
                     add(item);
@@ -44,7 +44,7 @@ public class Sets {
     }
 
     private static <T> Set<T> symmetricDifferenceSet(Set<T> a, Set<T> b) {
-        return new HashSet<>() {{
+        return new HashSet<T>() {{
             b.forEach((item) -> {
                 if (!a.contains(item)) {
                     add(item);

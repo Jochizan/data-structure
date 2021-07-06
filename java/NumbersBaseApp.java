@@ -8,7 +8,9 @@ public class NumbersBaseApp {
 
     public static void main(String[] args) {
         System.out.print("Ingrese el valor del número en base 2: ");
+
         NumbersBase numbersBase = new NumbersBase(in.next(), 2);
+
         numbersBase.toWrite();
         numbersBase.transformTo10();
         numbersBase.toWrite();
