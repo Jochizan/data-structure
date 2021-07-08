@@ -5,11 +5,26 @@ public class Queue {
     private Node head = null;
     private Node peak = null;
 
+//    public static void showTwo(Queue queue1, Queue queue2) {
+//        Node node1 = queue1.head;
+//        Node node2 = queue2.head;
+//
+//        while (node1 != null || node2 != null) {
+//            System.out.print(node1 == null ? "" : node1.value + "\t" + node2 == null ? "" : node2.value);
+//            if (node1 != null) {
+//                node1 = node1.next;
+//            }
+//            if (node2 != null) {
+//                node2 = node2.next;
+//            }
+//        }
+//    }
+
     public void cancel() {
         head = peak = null;
     }
 
-    public void add(int value) {
+    public void add(String value) {
         Node newNode = new Node(value);
 
         if (peak == null) {
@@ -48,7 +63,7 @@ public class Queue {
             peak.next = null;
             peak = head;
         } else {
-            System.out.println("La pila está vacía");
+            System.out.println("La cola está vacía");
         }
     }
 }
