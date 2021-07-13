@@ -37,17 +37,17 @@ public class QueueApp {
                     System.out.print("Ingrese un elemento: ");
                     value = in.next();
 
-                    System.out.println(Pattern.matches(regexp, value));
-
-                    if (Pattern.matches(regexp, value))  {
-                        queue1.add(value);
-                    } else {
-                        queue2.add(value);
-                    }
+//                    System.out.println(Pattern.matches(regexp, value));
+//
+//                    if (Pattern.matches(regexp, value))  {
+//                        queue1.add(value);
+//                    } else {
+//                        queue2.add(value);
+//                    }
                     break;
                 case 3:
-                    queue1.remove();
-                    queue2.remove();
+                    queue1.delete();
+                    queue2.delete();
                     break;
                 default:
                     System.out.println("Opción no contemplada");

@@ -1,69 +1,89 @@
 package courses.second.tda;
 
-public class Queue {
+import java.util.ArrayList;
+import java.util.List;
 
-    private Node head = null;
+public class Queue extends Thread {
+
+    private List<Integer> meanAttentionTime = new ArrayList<>();
+    private List<Integer> meanWaitTime = new ArrayList<>();
     private Node peak = null;
-
-//    public static void showTwo(Queue queue1, Queue queue2) {
-//        Node node1 = queue1.head;
-//        Node node2 = queue2.head;
-//
-//        while (node1 != null || node2 != null) {
-//            System.out.print(node1 == null ? "" : node1.value + "\t" + node2 == null ? "" : node2.value);
-//            if (node1 != null) {
-//                node1 = node1.next;
-//            }
-//            if (node2 != null) {
-//                node2 = node2.next;
-//            }
-//        }
-//    }
+    private Node head = null;
+    private Node down = null;
 
     public void cancel() {
-        head = peak = null;
+        head = peak = down = null;
     }
 
-    public void add(String value) {
-        Node newNode = new Node(value);
+    public void add(String e) {
+        Node nuevo = new Node(e);
 
         if (peak == null) {
-            peak = newNode;
-            head = peak;
+            peak = nuevo;
+            head = down = nuevo;
         } else {
-            peak = newNode;
-            Node node = head;
-            while (node.next != null) {
-                node = node.next;
-            }
-            node.next = peak;
+            down.next = nuevo;
+            down = nuevo; //down=down.next;
         }
-    }
+
+    }// down de inserta
 
     public void show() {
-        Node node = head;
+        Node p = peak;
 
-        while (node != null) {
-            System.out.println(node.value);
-            node = node.next;
+        while (p != null) {
+            System.out.print(p.value + "-->");
+            p = p.next;
         }
+        System.out.println("null");
     }
 
-    public int getHead() {
-        if (peak != null) {
-            return (int) peak.value;
-        } else {
-            return -1;
-        }
+    public void delete() {
+        peak = peak.next;
+        head = peak;
     }
 
-    public void remove() {
-        if (head != null) {
-            head = head.next;
-            peak.next = null;
-            peak = head;
-        } else {
-            System.out.println("La cola está vacía");
+    public void meanTimes(int size) {
+        int meanAttention = 0, meanWait = 0, sizeAttention = meanAttentionTime.size(), sizeWait = meanWaitTime.size();
+
+        for (Integer value : meanAttentionTime) {
+            meanAttention += value;
+        }
+
+        for (Integer integer : meanWaitTime) {
+            meanWait += integer;
+        }
+
+        System.out.println("Suma de tiempos de espera: " + meanWait);
+        System.out.println("Suma de tiempos de atención: " + meanAttention);
+        System.out.println("Tamaño de la cola: " + size);
+        System.out.println("Los promedios de tiempos son:" +
+                "\nDe espera: " + String.format("%.2f", (double) meanWait / (size - 1)) +
+                "\nDe atención: " + String.format("%.2f", (double) meanAttention / sizeAttention)
+        );
+    }
+
+    @Override
+    public void run() {
+        int time = (int) (Math.random() * 8 + 2);
+        for (int i = 1; i <= time; i++) {
+            System.out.println(i + "s...");
+            try {
+                Queue.sleep(1000);
+            } catch (InterruptedException e) {
+                System.out.println("Error de ejecución de hilo principal");
+            }
+        }
+
+        Node p = peak;
+        p.attentionTime = time;
+        meanAttentionTime.add(p.attentionTime);
+
+        p = p.next;
+        while (p != null) {
+            p.waitTime += time;
+            meanWaitTime.add(time);
+            p = p.next;
         }
     }
 }
