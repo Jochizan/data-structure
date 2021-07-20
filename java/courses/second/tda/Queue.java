@@ -23,7 +23,7 @@ public class Queue extends Thread {
             head = down = nuevo;
         } else {
             down.next = nuevo;
-            down = nuevo; //down=down.next;
+            down = nuevo; //down = down.next;
         }
 
     }// down de inserta
