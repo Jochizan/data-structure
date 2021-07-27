@@ -1,4 +1,5 @@
 list = [1, 2, 3, 4, 5]
+
 obj = {
     'firs_name': 'Joan',
     'last_name': 'Roca Hormaza'
@@ -10,9 +11,7 @@ messy_list = [13, 1, 2, 3, 11, 20, 9, 1, -10, 14]
 
 
 def swap(arr, i, j):
-    aux = arr[i]
-    arr[i] = arr[j]
-    arr[j] = aux
+    arr[i], arr[j] = arr[j], arr[i]
 
 
 # algoritmo más eficiente que el bubble sort
