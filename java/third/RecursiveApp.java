@@ -10,6 +10,7 @@ public class RecursiveApp {
             : x; // si se cumple que "x" es igual 1
 
     private static final Scanner in = new Scanner(System.in);
+    static int count = 0;
 
     public static long factorial(long n) {
         if (n == 1) {
