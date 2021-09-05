@@ -38,6 +38,18 @@ class BinarySearchTree {
       }
     }
   }
+
+  search(value, tree = this.root) {
+    if (tree == null) {
+      return 'El elemento no se encuentra.';
+    } else if (value > tree.value) {
+      return this.search(value, tree.right);
+    } else if (value < tree.value) {
+      return this.search(value, tree.left);
+    } else {
+      return '¡El elemento ha sido encontrado!';
+    }
+  }
 }
 
 const binaryTree = new BinarySearchTree();
